@@ -1,0 +1,10 @@
+{
+  "name": "Dogflix",
+  "short_name": "Dogflix",
+  "description": "Le streaming premium à quatre pattes.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#090909",
+  "theme_color": "#e50914",
+  "icons": [{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}

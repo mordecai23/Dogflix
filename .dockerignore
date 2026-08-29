@@ -1,0 +1,7 @@
+node_modules
+dist
+.git
+.gitignore
+*.log
+coverage
+PROMPT_CODEX_DOGFLIX.md
