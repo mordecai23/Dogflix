@@ -13,6 +13,7 @@ describe('catalogue Dogflix', () => {
     expect(searchCatalog('CROQUETTES').some((item) => item.title === 'Breaking Dog')).toBe(true)
     expect(searchCatalog('deuxieme patte').map((item) => item.title)).toContain('Dune : Deuxième Patte')
     expect(searchCatalog('paloma')).toHaveLength(5)
+    expect(searchCatalog('berger australien').filter((item) => item.title.startsWith('Paloma'))).toHaveLength(5)
   })
 
   it('filtre les nouveautés et Ma liste', () => {
