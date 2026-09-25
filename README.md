@@ -1,6 +1,6 @@
 # Dogflix
 
-Dogflix est une plateforme de streaming parodique premium entièrement consacrée aux chiens. L’application contient exactement 20 séries et 20 films, un écran de profils, une recherche instantanée, des filtres, une liste persistante, des carrousels, des fiches détaillées et un faux lecteur plein écran.
+Dogflix est une plateforme de streaming parodique premium entièrement consacrée aux chiens. L’application contient 37 séries et 31 films, un écran de profils, une recherche instantanée, des filtres, une liste persistante, des carrousels, des fiches détaillées et un faux lecteur plein écran.
 
 ## Développement local
 
@@ -43,9 +43,10 @@ Ouvrir ensuite `http://localhost:8080`. Nginx applique la compression, un cache 
 
 ## Structure utile
 
-- `src/data/catalog.ts` : les 40 œuvres et toutes leurs métadonnées.
+- `src/data/catalog.ts` : les 68 œuvres et toutes leurs métadonnées.
 - `src/components/` : composants réutilisables de l’interface.
-- `public/assets/posters/` : 40 affiches verticales originales.
+- `public/assets/posters/` : les affiches verticales originales du catalogue.
+- `source-assets/posters/` : les masters PNG et variantes conservés hors du build public.
 - `public/assets/backdrops/` : trois panoramas originaux.
 - `public/assets/profiles/` : quatre avatars canins.
 - `nginx.conf.template`, `Dockerfile`, `railway.json` : déploiement statique Railway.

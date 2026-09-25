@@ -3,10 +3,10 @@ import { catalog } from '../data/catalog'
 import { filterCatalog, searchCatalog } from './catalog'
 
 describe('catalogue Dogflix', () => {
-  it('contient exactement 20 films et 20 séries', () => {
-    expect(filterCatalog('film', [])).toHaveLength(20)
-    expect(filterCatalog('serie', [])).toHaveLength(20)
-    expect(catalog).toHaveLength(40)
+  it('contient les 31 films et 37 séries du catalogue', () => {
+    expect(filterCatalog('film', [])).toHaveLength(31)
+    expect(filterCatalog('serie', [])).toHaveLength(37)
+    expect(catalog).toHaveLength(68)
   })
 
   it('recherche sans tenir compte des accents ni de la casse', () => {
@@ -17,5 +17,11 @@ describe('catalogue Dogflix', () => {
   it('filtre les nouveautés et Ma liste', () => {
     expect(filterCatalog('new', []).every((item) => item.isNew)).toBe(true)
     expect(filterCatalog('list', [1, 21]).map((item) => item.id)).toEqual([1, 21])
+  })
+
+  it('référence une affiche et des identifiants uniques pour chaque œuvre', () => {
+    expect(catalog.every((item) => item.poster.startsWith('/assets/posters/'))).toBe(true)
+    expect(new Set(catalog.map((item) => item.id)).size).toBe(catalog.length)
+    expect(new Set(catalog.map((item) => item.slug)).size).toBe(catalog.length)
   })
 })
