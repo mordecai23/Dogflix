@@ -409,6 +409,36 @@ export const catalog: Media[] = [
     year: 2026, seasons: 6, age: '16+', match: 94, genres: ['Historique', 'Aventure', 'Meute nordique'],
     poster: '/assets/posters/vikinchiens.avif', isNew: true, trending: true, dogflixOriginal: true, inMyList: false,
   },
+  {
+    id: 69, slug: 'paloma-wick', type: 'film', title: 'Paloma Wick', originalTitle: 'John Wick',
+    synopsis: "Quand un réseau de voleurs s’attaque aux chiens de la ville, Paloma ressort son manteau noir et rassemble une meute d’élite pour leur apprendre à ne jamais toucher à la famille.",
+    year: 2026, duration: '2 h 09 min', age: '16+', match: 99, genres: ['Action', 'Protectrice canine', 'Néons sous la pluie'],
+    poster: '/assets/posters/paloma-wick.avif', isNew: true, trending: true, dogflixOriginal: true, inMyList: true,
+  },
+  {
+    id: 70, slug: 'paloma-jones', type: 'film', title: 'Paloma Jones', originalTitle: 'Indiana Jones',
+    synopsis: "Accompagnée d’un golden retriever intrépide, Paloma traverse une jungle oubliée pour retrouver l’Idole de la Patte d’or avant une bande de pilleurs sans flair.",
+    year: 2026, duration: '1 h 58 min', age: '7+', match: 98, genres: ['Aventure', 'Temple perdu', 'Patte d’or'],
+    poster: '/assets/posters/paloma-jones.avif', isNew: true, trending: true, dogflixOriginal: true, inMyList: false,
+  },
+  {
+    id: 71, slug: 'paloma-potter', type: 'film', title: 'Paloma Potter', originalTitle: 'Harry Potter',
+    synopsis: "À l’académie de Toutoudlard, Paloma découvre qu’elle peut invoquer un chien spectral. Il lui faudra ce pouvoir pour protéger le château et le dernier sac de biscuits enchantés.",
+    year: 2026, duration: '2 h 21 min', age: '7+', match: 97, genres: ['Magie', 'École canine', 'Chien spectral'],
+    poster: '/assets/posters/paloma-potter.avif', isNew: true, trending: true, dogflixOriginal: true, inMyList: true,
+  },
+  {
+    id: 72, slug: 'paloma-et-les-101-toutous', type: 'film', title: 'Paloma & les 101 Toutous', originalTitle: 'Les 101 Dalmatiens',
+    synopsis: "Paloma transforme les rues de Londres en refuge improvisé lorsqu’une joyeuse avalanche de chiots dalmatiens lui confie la plus grande mission de sauvetage de sa vie.",
+    year: 2026, duration: '1 h 47 min', age: 'Tout public', match: 99, genres: ['Comédie', 'Dalmatiens', 'Sauvetage londonien'],
+    poster: '/assets/posters/paloma-et-les-101-toutous.avif', isNew: true, trending: true, dogflixOriginal: true, inMyList: false,
+  },
+  {
+    id: 73, slug: 'paloma-et-marley', type: 'film', title: 'Paloma & Marley', originalTitle: 'Marley & Moi',
+    synopsis: "Entre serviettes volées, pique-niques renversés et courses dans les vagues, Paloma découvre qu’une vie avec Marley est un délicieux chaos dont elle ne voudrait plus se passer.",
+    year: 2026, duration: '1 h 55 min', age: 'Tout public', match: 98, genres: ['Comédie', 'Amitié', 'Chaos à la plage'],
+    poster: '/assets/posters/paloma-et-marley.avif', isNew: true, trending: true, dogflixOriginal: true, inMyList: true,
+  },
 ]
 
 export const mediaById = (id: number) => catalog.find((item) => item.id === id)

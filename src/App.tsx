@@ -14,6 +14,7 @@ import { profiles, type Profile } from './data/profiles'
 import { SearchPanel } from './components/SearchPanel'
 
 const rows: Array<{ title: string; eyebrow?: string; ids: number[]; ranked?: boolean }> = [
+  { title: 'La collection Paloma', eyebrow: '5 FILMS · UNE HÉROÏNE', ids: [69, 70, 71, 72, 73] },
   { title: 'Tout juste sortis de la niche', eyebrow: `${catalog.length - 40} NOUVEAUTÉS`, ids: catalog.slice(40).map((item) => item.id) },
   { title: 'Tendances actuelles', eyebrow: 'ÇA FAIT ABOYER', ids: [8, 21, 1, 38, 5, 36, 34, 3, 32, 13], ranked: true },
   { title: 'Les plus reniflées aujourd’hui', ids: [16, 6, 22, 33, 2, 10, 18, 35, 27, 20] },
@@ -24,9 +25,12 @@ const rows: Array<{ title: string; eyebrow?: string; ids: number[]; ranked?: boo
   { title: 'Univers sombres, museaux humides', ids: [19, 34, 4, 26, 37, 9, 11, 8, 2, 27] },
 ]
 
+const filmCount = catalog.filter((item) => item.type === 'film').length
+const seriesCount = catalog.filter((item) => item.type === 'serie').length
+
 const viewTitles: Record<Exclude<View, 'home'>, { eyebrow: string; title: string; copy: string }> = {
-  serie: { eyebrow: `${catalog.filter((item) => item.type === 'serie').length} SÉRIES · BEAUCOUP DE SAISONS CHIEN`, title: 'Séries à dévorer', copy: 'Des épisodes soigneusement classés par odeur et par niveau de canapé détruit.' },
-  film: { eyebrow: `${catalog.filter((item) => item.type === 'film').length} FILMS · 62 OREILLES EN MOYENNE`, title: 'Films pour toute la meute', copy: 'Grand spectacle, petits chiens et génériques que personne ne saute.' },
+  serie: { eyebrow: `${seriesCount} SÉRIES · BEAUCOUP DE SAISONS CHIEN`, title: 'Séries à dévorer', copy: 'Des épisodes soigneusement classés par odeur et par niveau de canapé détruit.' },
+  film: { eyebrow: `${filmCount} FILMS · ${filmCount * 2} OREILLES EN MOYENNE`, title: 'Films pour toute la meute', copy: 'Grand spectacle, petits chiens et génériques que personne ne saute.' },
   new: { eyebrow: 'TOUT FRAIS · PAS ENCORE RENIFLÉ', title: 'Nouveautés', copy: 'Les dernières productions sorties tout droit de la niche de montage.' },
   list: { eyebrow: 'VOTRE TERRITOIRE', title: 'Ma liste', copy: 'Les œuvres que vous avez marquées d’un discret coup de patte.' },
 }
