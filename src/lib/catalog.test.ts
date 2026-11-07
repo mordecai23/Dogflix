@@ -3,17 +3,15 @@ import { catalog } from '../data/catalog'
 import { filterCatalog, searchCatalog } from './catalog'
 
 describe('catalogue Dogflix', () => {
-  it('contient les 36 films et 37 séries du catalogue', () => {
-    expect(filterCatalog('film', [])).toHaveLength(36)
+  it('contient les 31 films et 37 séries du catalogue', () => {
+    expect(filterCatalog('film', [])).toHaveLength(31)
     expect(filterCatalog('serie', [])).toHaveLength(37)
-    expect(catalog).toHaveLength(73)
+    expect(catalog).toHaveLength(68)
   })
 
   it('recherche sans tenir compte des accents ni de la casse', () => {
     expect(searchCatalog('CROQUETTES').some((item) => item.title === 'Breaking Dog')).toBe(true)
     expect(searchCatalog('deuxieme patte').map((item) => item.title)).toContain('Dune : Deuxième Patte')
-    expect(searchCatalog('paloma')).toHaveLength(5)
-    expect(searchCatalog('berger australien').filter((item) => item.title.startsWith('Paloma'))).toHaveLength(5)
   })
 
   it('filtre les nouveautés et Ma liste', () => {

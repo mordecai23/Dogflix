@@ -14,7 +14,6 @@ import { profiles, type Profile } from './data/profiles'
 import { SearchPanel } from './components/SearchPanel'
 
 const rows: Array<{ title: string; eyebrow?: string; ids: number[]; ranked?: boolean }> = [
-  { title: 'La collection Paloma', eyebrow: '5 FILMS · UNE HÉROÏNE', ids: [69, 70, 71, 72, 73] },
   { title: 'Tout juste sortis de la niche', eyebrow: `${catalog.length - 40} NOUVEAUTÉS`, ids: catalog.slice(40).map((item) => item.id) },
   { title: 'Tendances actuelles', eyebrow: 'ÇA FAIT ABOYER', ids: [8, 21, 1, 38, 5, 36, 34, 3, 32, 13], ranked: true },
   { title: 'Les plus reniflées aujourd’hui', ids: [16, 6, 22, 33, 2, 10, 18, 35, 27, 20] },
@@ -42,7 +41,11 @@ function readProfile(): Profile | null {
 function readList(): number[] {
   try {
     const raw = localStorage.getItem('dogflix-list')
-    return raw ? (JSON.parse(raw) as number[]) : initialListIds
+    if (!raw) return initialListIds
+    const savedIds: unknown = JSON.parse(raw)
+    return Array.isArray(savedIds)
+      ? savedIds.filter((id): id is number => catalog.some((item) => item.id === id))
+      : initialListIds
   } catch { return initialListIds }
 }
 
